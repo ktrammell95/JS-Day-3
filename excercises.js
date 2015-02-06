@@ -48,22 +48,23 @@ function maxOfThree(number1, number2, number3) {
 
 
 function getVowels(letter) {
+  // var alphabet = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", 
+  // "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", 
+  // "w", "x", "y", "z"];
   var vowels = ["a", "e", "i", "o", "u"];
-  vowels.forEach(function(array,i) {
-      if (letter === array) {
-      return "vowel";
-      }
-      // else if (letter !== array) {
-      //   return "false"
-      // }
-   });
+  // vowels.forEach(function(array,i) {
+  //     if (letter === array) {
+  //       return "vowel";
+  //     }
+  //  });
   // var getVowels = function(letter) {
-    // for (vIndex = 0; vIndex < vowels.length; vIndex++) {
-        // if (letter == vowels[vIndex]) {
-        // return "vowel";
-      // }
-    // };
-    return "false"
+    for (vIndex = 0; vIndex < vowels.length; vIndex++) {
+        if (letter == vowels[vIndex]) {
+        return "vowel";
+      }
+    };
+    return "false";
+  // }
 }
 
 
@@ -72,12 +73,12 @@ function getVowels(letter) {
 //For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 // ---------------------
 
-
-var numbers = [10, 20, 30, 40];
-var sum = numbers.reduce(function(memo, item) {
-  return memo + item;
-});
-
+function sum(numbers) {
+// var numbers = [10, 20, 30, 40];
+  numbers.reduce(function(memo, item) {
+    return memo + item;
+  });
+}
 
 var numbers = [1, 2, 3, 4];
 var multiply = numbers.reduce(function(memo, item) {
@@ -88,7 +89,7 @@ var multiply = numbers.reduce(function(memo, item) {
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-
+// function reverse(string)
 var string = "Katherine Trammell";
     string.split("");
     string.split("").reverse();
