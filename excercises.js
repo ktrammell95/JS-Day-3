@@ -118,7 +118,7 @@ var findLongestWords = colors.filter(function(words) {
   count = words.length
   colors.forEach(function(count) {
     if
-  })
+  });
   return words.length >= 10;
 });
 
