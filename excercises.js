@@ -48,23 +48,14 @@ function maxOfThree(number1, number2, number3) {
 
 
 function getVowels(letter) {
-  // var alphabet = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", 
-  // "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", 
-  // "w", "x", "y", "z"];
   var vowels = ["a", "e", "i", "o", "u"];
-  // vowels.forEach(function(array,i) {
-  //     if (letter === array) {
-  //       return "vowel";
-  //     }
-  //  });
-  // var getVowels = function(letter) {
-    for (vIndex = 0; vIndex < vowels.length; vIndex++) {
-        if (letter == vowels[vIndex]) {
-        return "vowel";
+  var hasVowel = false;
+  vowels.forEach(function(currentVowel) {
+      if (letter === currentVowel) {
+        hasVowel = true;
       }
-    };
-    return "false";
-  // }
+   });
+  return hasVowel;
 }
 
 
@@ -73,27 +64,33 @@ function getVowels(letter) {
 //For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 // ---------------------
 
-function sum(numbers) {
-// var numbers = [10, 20, 30, 40];
-  numbers.reduce(function(memo, item) {
-    return memo + item;
-  });
-}
 
-var numbers = [1, 2, 3, 4];
-var multiply = numbers.reduce(function(memo, item) {
-  return memo * item;
-});
+
+function sum(numbers) {
+  var length = numbers.length;
+  var total = 0;
+  for (i = 0; i < length; i++) {
+    total += numbers[i];
+  }
+  return total;
+};
+
+var multiply = function(num) {
+  var length = num.length;
+  var total = 1;
+  for (i = 0; i < length;  i++) {
+    total *= num[i];
+  }
+  return total;
+};
 
 // ---------------------
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-// function reverse(string)
-var string = "Katherine Trammell";
-    string.split("");
-    string.split("").reverse();
-    string.split("").reverse().join("");
+function reverse(string) {
+  return string.split("").reverse().join("");
+}
   function reverseString(string) {
     return string.split("").reverse().join("");
   }
@@ -110,36 +107,84 @@ var string = "Katherine Trammell";
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
 
-//
+//allow array input
+//take words in array and seperate them out
+  //take words and count the characters
+//take each count and compare to other counts
+//return the word with largest number 
 
-var colors = ["red", "blue", "green", "yellow", "aquamarine", "pink", "fuschia"];
+function findLongestWord(words) {
+  var longest = 0;
+  var longestName = "";
+  for (var i = 0; i < words.length; i++) {
+    if (words[i].length > longest) {
+        longest = words[i].length;
+        longestName = words[i];
+    }
+  };
+  return(longestName);
+}; 
 
-var findLongestWords = colors.filter(function(words) {
-  count = words.length
-  colors.forEach(function(count) {
-    if
-  });
-  return words.length >= 10;
-});
 
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
 
-var cities = ["Detroit", "Madison Heights", "Troy", "St. Petersburg", "Las Vegas", "Tampa", "Frankenmeuth"];
+function filterLongWords(array, int) {
+  var length = array.length;
+  var longWords = [];
+  for (i = 0; i < length; i++) {
+    if (array[i].length > int) {
+      longWords[longWords.length] = array[i];
+    }
+  }
+  return longWords;
+}
 
-var findLongWords = cities.filter(function(words, i){
-    return words.length >= 10;
-});
-
-function(filterLongWords) {}
-
+// var cities = ["Detroit", "Madison Heights", "Troy", "St. Petersburg", "Las Vegas", "Tampa", "Frankenmeuth"];
 
 
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
+var string ="aaaaabbbbbbcccccccdddddddeeeeeeee";
 
-function charFreq(string){
-    //...
-}
+var alpha = "aaaaabbbbbbcccccccdddddddeeeeeeee".split("");
+
+var letterMap = alpha.reduce(function(memo, item, index) { 
+    memo[item] = index; return memo;
+  }, {});
+var sum 
+
+
+
+
+
+
+
+
+
+
+//--------
+
+var chars = string.split("");
+  var charsMap = chars.map(function(char) {
+    return [char, char.length];      
+  });
+  var charsReduce = charsMap.reduce(function(memo, item, index) {
+    memo[item] = index; 
+    return memo;
+  }, {});
+
+
+//convert to array of chars
+//chars
+// create map object
+// loop over chars
+  //get current char - currentChar
+  // does mapObj have property for currentChar?
+    //true
+      // increment that property
+    //false
+      //add that property
+      //give it the value of one

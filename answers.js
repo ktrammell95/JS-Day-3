@@ -56,16 +56,17 @@ console.log("The average price is $" + n);
 // return "Items that cost between $14.00 USD and $18.00 USD:" and then the actual title
 
 //filters the itemsList to only show items with a price between $14 and $18
-var itemsList = items.filter(function(item, price) {
+// var titles = [];
+
+var itemsByCost = items.filter(function(item, price) {
     return item.price > 14 && item.price < 18;    
 });
+var itemMap = itemsByCost.map(function(item) {
+    return [item.title];   
+});
+var answer = "Items that cost between $14.00 USD and $18.00 USD:" + itemMap;
+//stopping at being able to print the wording with titles, cannot figure out how to do the full objects
 
-
-//need to return phrase "Items that cost between $14.00 USD and $18.00 USD:"
-//with the title array behind it
-//var listTitle = itemsList.reduce(function(title) {
-//return "Items that cost between $14.00 USD and $18.00 USD:" + [itemsList];
-// });
 
 //Question 3:
 
@@ -101,46 +102,18 @@ pull list of all materials
 
 // return item descriptions in console.log
 
-
-
-
-var itemMap = items.filter(function(item) {
-    return item.title;   
-});
-
-var currentMaterials = items.map(function(item) {
-    return item.materials;
-});
-
-var containsWood = forEach(function(items) {
-    var answer = false;
-
-    items.forEach(function(material) {
-        if (material === "wood") {
-            answer = true;
-        };
-        return answer;
-    });
-    
-
-
-//-------stuff for consideration
 var itemList = items.filter(function(item) {
     return item;
 });
 //Map the title and the materials array length
 var itemMap = itemList.map(function(item) {
-    return [item.title, item.materials.length];   
-});
-//links map to show the items with 8 or more
-var answer = itemMap.filter(function(item, index) {
-    return item[1] >= 8;
+    return [item.title, item.materials];   
 });
 
 
 
 
-console.log()
+
 //Question 5:
     // Show me how to find which items are made of eight or more materials. Please console.log the ones you find.
 
@@ -183,7 +156,7 @@ var itemMap = itemList.map(function(item) {
 var answer = itemMap.filter(function(item, index) {
     return item[1] >= 8;
 });
-//need to figure out how to return with wording
+ console.log (answer);
 
 
 
