@@ -12,19 +12,22 @@
 //divide the total by the number of items to get average
 //console log the $ + average cost
 
-//pull map of price and link it to the $ value
 var currentPrice = items.map(function(item) {
     return item.price;
-});
-// reduce lets me take the price values and add them together to get $590.65
+});//pull map of price and link it to the $ value
+
+
 var pricing = currentPrice.reduce(function(pricing, value) {
     return pricing + value;
-});
-//divide the pricing $590.65 by # of items in array
+});// reduce lets me take the price values and add them together to get $590.65
+
+
+var avg = pricing/25;//divide the pricing $590.65 by # of items in array
 //using hard # right now, need to find way not to use hard #
-var avg = pricing/25;
-//.toFixed(2) lets me round my avg to just 2 decimal places
-var n = avg.toFixed(2);
+
+var n = avg.toFixed(2); //.toFixed(2) lets me round my avg to just 2 decimal places
+
+
 //add "The average price is $" and pull in rounded number
 console.log("The average price is $" + n);
 
@@ -61,9 +64,11 @@ console.log("The average price is $" + n);
 var itemsByCost = items.filter(function(item, price) {
     return item.price > 14 && item.price < 18;    
 });
+
 var itemMap = itemsByCost.map(function(item) {
     return [item.title];   
 });
+
 var answer = "Items that cost between $14.00 USD and $18.00 USD:" + itemMap;
 //stopping at being able to print the wording with titles, cannot figure out how to do the full objects
 
@@ -78,6 +83,7 @@ var answer = "Items that cost between $14.00 USD and $18.00 USD:" + itemMap;
 // get the console log to only show the title and $ for those items
 
 //This will filter the array of objects to only pull items with GBP in the currency code.
+
 var itemsList = items.filter(function(item) {  
     return item.currency_code === "GBP";  
 });
@@ -97,33 +103,32 @@ console.log(itemsList[0].title + " £" + itemsList[0].price);
 // Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood.
 
 
-Steps
-pull list of all materials
-
-// return item descriptions in console.log
 
 //Filter the items
 var itemList = items.filter(function(item, materials) {
     return item;
     
 });
-var materialList = items[0].materials; {
-    for (var i = 0; i < words.length; i++) {
-        if 
-}
-// var itemMap = itemList.map(function(item) {
-//     return [item.title, item.materials];
-
-// });
-// var materialList = itemMap.filter(function(item) {
-//     return [item.materials == "wood"];
-// });
 
 
-// var materialList = itemMap.reduce(function(finalMap, item, materials) {
-//     finalMap[item.title] = (item.materials !== "wood";
-//   return finalMap;
-//   }, {});
+Need to complete this one, had total brain block on how to go about it even with example from class.
+// var materialList = items[0].materials; {
+//     for (var i = 0; i < words.length; i++) {
+//         if 
+// }
+// // var itemMap = itemList.map(function(item) {
+// //     return [item.title, item.materials];
+
+// // });
+// // var materialList = itemMap.filter(function(item) {
+// //     return [item.materials == "wood"];
+// // });
+
+
+// // var materialList = itemMap.reduce(function(finalMap, item, materials) {
+// //     finalMap[item.title] = (item.materials !== "wood";
+// //   return finalMap;
+// //   }, {});
 
 
 var materialList = items[0].materials.filter(function(item, materials) {
@@ -134,6 +139,7 @@ var materialList = items[0].materials.filter(function(item, materials) {
 // var itemMap = itemList.map(function(item) {
 //     return [item.title, item.materials];   
 // });
+
 var itemsList = items.filter(function(item) {  
     return items[0].materials;  
 });
@@ -182,6 +188,7 @@ console.log(itemsList[0].title + "" + itemsList[0].materials[0]);
 var itemList = items.filter(function(item) {
     return item;
 });
+
 //Map the title and the materials array length
 var itemMap = itemList.map(function(item) {
     return [item.title, item.materials.length];   
@@ -204,8 +211,10 @@ var answer = itemMap.filter(function(item, index) {
 var madeBy = items.map(function(item) {
     return item.who_made === "i_did";
 });
+
 //This uses the index and the true/false and adds up all of the true lines
 var count = madeBy.reduce(function(memo, value) {
     return memo + value;
 });
+
 var sum = (count + " were made by their sellers");
