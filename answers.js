@@ -102,18 +102,52 @@ pull list of all materials
 
 // return item descriptions in console.log
 
-var itemList = items.filter(function(item) {
+//Filter the items
+var itemList = items.filter(function(item, materials) {
     return item;
+    
 });
-//Map the title and the materials array length
-var itemMap = itemList.map(function(item) {
-    return [item.title, item.materials];   
+var materialList = items[0].materials; {
+    for (var i = 0; i < words.length; i++) {
+        if 
+}
+// var itemMap = itemList.map(function(item) {
+//     return [item.title, item.materials];
+
+// });
+// var materialList = itemMap.filter(function(item) {
+//     return [item.materials == "wood"];
+// });
+
+
+// var materialList = itemMap.reduce(function(finalMap, item, materials) {
+//     finalMap[item.title] = (item.materials !== "wood";
+//   return finalMap;
+//   }, {});
+
+
+var materialList = items[0].materials.filter(function(item, materials) {
+    console.log(itemsList[0].materials);
 });
 
+// //Map the title and the materials array length
+// var itemMap = itemList.map(function(item) {
+//     return [item.title, item.materials];   
+// });
+var itemsList = items.filter(function(item) {  
+    return items[0].materials;  
+});
 
+console.log(itemsList[0].title + "" + itemsList[0].materials[0]);
 
+// var nameToAge = people.reduce(function(finalMap, person) {
+//   finalMap[person.name] = person.age;
+//   return finalMap;
+//   }, {});
 
-
+// for (var i = 0; i < words.length; i++) {
+//        reverseWords.push(reverseString(words[i]));
+//     }
 //Question 5:
     // Show me how to find which items are made of eight or more materials. Please console.log the ones you find.
 

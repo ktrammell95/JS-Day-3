@@ -147,26 +147,39 @@ function filterLongWords(array, int) {
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
-var string ="aaaaabbbbbbcccccccdddddddeeeeeeee";
-
-var alpha = "aaaaabbbbbbcccccccdddddddeeeeeeee".split("");
-
-var letterMap = alpha.reduce(function(memo, item, index) { 
-    memo[item] = index; return memo;
-  }, {});
-var sum 
-
-
+function charFreq(string) {
+  var chars = string.split("");
+  var charReduce = chars.reduce(function(letter, index){
+    return index;
+  // (letter[index] = ++letter[index] || 1);
+  });
+  // return
+}
 
 
 
+// var charFreq = "aaabbbcccddd".split("");
+//   var charReduce = charFreq.reduce(function(char, index){
+//     return char.length;
+//   }); 
+// }
+//  return charFreq.split('').reduce(function(acc, x) {
+//     acc[x] = ++acc[x] || 1;
+//     return acc;
+//   },{});
+// };
 
 
+// //--------
+// // var charFreq = function(x) {
+//   return x.split('').reduce(function(acc, x) {
+//     acc[x] = ++acc[x] || 1;
+//     return acc;
+//   },{});
+// };
+// //--------
 
-
-
-//--------
-
+//--example found on web but need to figure out how this works, prefer to write it out long way
 var chars = string.split("");
   var charsMap = chars.map(function(char) {
     return [char, char.length];      
