@@ -15,7 +15,9 @@ var items = [{
   "tags": ["mug", "siesta ware", "beer mug", "white glass mug", "siestaware white", "navy", "sailor", "blue", "wood handle", "vintage glassware", "collectible", "blue anchor", "anchor and stars"],
   "category_path": ["Vintage", "Housewares", "Cup"],
   "category_path_ids": [69150437, 69154753, 68905630],
+  
   "materials": ["glass", "wood", "metal"],
+
   "shop_section_id": 15467146,
   "featured_rank": null,
   "state_tsz": 1399311031,
