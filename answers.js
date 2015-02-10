@@ -111,7 +111,7 @@ var itemList = items.filter(function(item, materials) {
 });
 
 
-Need to complete this one, had total brain block on how to go about it even with example from class.
+// Need to complete this one, had total brain block on how to go about it even with example from class.
 // var materialList = items[0].materials; {
 //     for (var i = 0; i < words.length; i++) {
 //         if 
