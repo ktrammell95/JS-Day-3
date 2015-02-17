@@ -129,32 +129,6 @@ var titles = itemsWithWood.map(function(item) {
 }); 
     console.log (titles)
 
-
-
-
-
-
-//------
-
-
-var itemList = items.filter(function(item, materials) {
-    return item;  
-});
-
-var matList = materials.filter(function(item, materials) {
-    return item;
-    
-});
-var itemMap = itemList.map(function(item) {
-    return [item.title, item.materials];   
-});   
-
-//links map to show the items with 8 or more
-var answer = itemMap.filter(function(item, index) {
-    return item[1] == "wood";
-});
- console.log (answer);
-
 //Question 5:
     // Show me how to find which items are made of eight or more materials. Please console.log the ones you find.
 
