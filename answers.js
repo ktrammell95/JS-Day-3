@@ -103,57 +103,58 @@ console.log(itemsList[0].title + " £" + itemsList[0].price);
 // Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood.
 
 
-
 //Filter the items
+
+
+
+var hasWood = function(item) {
+    var mats = item.materials;
+    var answer = false;
+    mats.forEach(function(mat){
+        if (mat === "wood"){
+         answer = true;   
+        }
+        
+    });
+    return answer;
+};
+
+var itemsWithWood = items.filter(function(currentItem) {
+    return hasWood(currentItem);
+
+});
+
+var titles = itemsWithWood.map(function(item) {
+    return item.title + " is made of wood.";
+}); 
+    console.log (titles)
+
+
+
+
+
+
+//------
+
+
 var itemList = items.filter(function(item, materials) {
+    return item;  
+});
+
+var matList = materials.filter(function(item, materials) {
     return item;
     
 });
+var itemMap = itemList.map(function(item) {
+    return [item.title, item.materials];   
+});   
 
-
-// Need to complete this one, had total brain block on how to go about it even with example from class.
-// var materialList = items[0].materials; {
-//     for (var i = 0; i < words.length; i++) {
-//         if 
-// }
-// // var itemMap = itemList.map(function(item) {
-// //     return [item.title, item.materials];
-
-// // });
-// // var materialList = itemMap.filter(function(item) {
-// //     return [item.materials == "wood"];
-// // });
-
-
-// // var materialList = itemMap.reduce(function(finalMap, item, materials) {
-// //     finalMap[item.title] = (item.materials !== "wood";
-// //   return finalMap;
-// //   }, {});
-
-
-var materialList = items[0].materials.filter(function(item, materials) {
-    console.log(itemsList[0].materials);
+//links map to show the items with 8 or more
+var answer = itemMap.filter(function(item, index) {
+    return item[1] == "wood";
 });
+ console.log (answer);
 
-// //Map the title and the materials array length
-// var itemMap = itemList.map(function(item) {
-//     return [item.title, item.materials];   
-// });
-
-var itemsList = items.filter(function(item) {  
-    return items[0].materials;  
-});
-
-console.log(itemsList[0].title + "" + itemsList[0].materials[0]);
-
-// var nameToAge = people.reduce(function(finalMap, person) {
-//   finalMap[person.name] = person.age;
-//   return finalMap;
-//   }, {});
-
-// for (var i = 0; i < words.length; i++) {
-//        reverseWords.push(reverseString(words[i]));
-//     }
 //Question 5:
     // Show me how to find which items are made of eight or more materials. Please console.log the ones you find.
 
